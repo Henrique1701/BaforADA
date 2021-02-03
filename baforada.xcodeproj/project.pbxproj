@@ -13,6 +13,7 @@
 		BE2742CD25CB2540006699E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE2742CC25CB2540006699E6 /* Assets.xcassets */; };
 		BE2742D025CB2540006699E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE2742CF25CB2540006699E6 /* Preview Assets.xcassets */; };
 		BE2742D325CB2540006699E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE2742D125CB2540006699E6 /* LaunchScreen.storyboard */; };
+		BE2742DF25CB2FC5006699E6 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2742DE25CB2FC5006699E6 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		BE2742CF25CB2540006699E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BE2742D225CB2540006699E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE2742D425CB2540006699E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE2742DC25CB2FB4006699E6 /* baforada.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = baforada.entitlements; sourceTree = "<group>"; };
+		BE2742DE25CB2FC5006699E6 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE2742DF25CB2FC5006699E6 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +46,7 @@
 			children = (
 				BE2742C525CB2531006699E6 /* baforada */,
 				BE2742C425CB2531006699E6 /* Products */,
+				BE2742DD25CB2FC5006699E6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +61,7 @@
 		BE2742C525CB2531006699E6 /* baforada */ = {
 			isa = PBXGroup;
 			children = (
+				BE2742DC25CB2FB4006699E6 /* baforada.entitlements */,
 				BE2742C625CB2531006699E6 /* AppDelegate.swift */,
 				BE2742C825CB2531006699E6 /* SceneDelegate.swift */,
 				BE2742CA25CB2531006699E6 /* ContentView.swift */,
@@ -73,6 +79,14 @@
 				BE2742CF25CB2540006699E6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BE2742DD25CB2FC5006699E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE2742DE25CB2FC5006699E6 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +300,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = baforada/baforada.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"baforada/Preview Content\"";
 				DEVELOPMENT_TEAM = 23WSBM7T82;
@@ -307,6 +322,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = baforada/baforada.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"baforada/Preview Content\"";
 				DEVELOPMENT_TEAM = 23WSBM7T82;

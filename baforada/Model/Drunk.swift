@@ -13,9 +13,9 @@ class Drunk {
     
     var recordName: String
     var lastTest: Date
-    var location: CLLocationCoordinate2D
+    var location: CLLocation
     
-    init (recordName: String, lastTest: Date, location: CLLocationCoordinate2D) {
+    init (recordName: String, lastTest: Date, location: CLLocation) {
         self.recordName = recordName
         self.lastTest = lastTest
         self.location = location

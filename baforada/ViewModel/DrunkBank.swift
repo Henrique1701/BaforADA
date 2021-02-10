@@ -20,23 +20,32 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var alertSaveSuccess: Bool = false
     @Published var alertSaveError: Bool = false
     
+    @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -8.0578, longitude: -34.8829), latitudinalMeters: 10000, longitudinalMeters: 10000)
+    @Published var tracking: MapUserTrackingMode = .follow
+    @Published var manager = CLLocationManager()
+    @Published var managerDelegate = locationDelegate()
+    
+    
     let publicDatabase = CKContainer(identifier: "iCloud.academy.ufpe.br.baforada").publicCloudDatabase
     
     override init() {
         super.init()
-        
-        locationManager.requestAlwaysAuthorization()
-        locationManager.requestWhenInUseAuthorization()
+        //manager.requestWhenInUseAuthorization()
+//        locationManager.requestAlwaysAuthorization()
+//        locationManager.requestWhenInUseAuthorization()
         
         if !(UserDefaults.standard.bool(forKey: "userCreated")) {
             setDrunk(drunkness: 0)
         }
+        manager.delegate = managerDelegate
         getDrunks()
+        
     }
     
     func getDrunks(){
         print("Iniciou getDrunks")
         var drunkRecords: [CKRecord] = []
+        managerDelegate.pins = []
         
         let predicate = NSPredicate(value: true)
         
@@ -61,6 +70,7 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
                     self.drunks.append(drunk)
                     print(drunk.location)
                 }
+                self.managerDelegate.addPins(self.drunks)
             }
         }
         
@@ -69,10 +79,13 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     func setDrunk(drunkness: Int) {
         UserDefaults.standard.set(true, forKey: "userCreated")
-        
+        manager.requestWhenInUseAuthorization()
         let drunk = CKRecord(recordType: "Drunk")
         drunk.setValue(drunkness, forKey: "drunkness")
         drunk.setValue(Date(), forKey: "lastTest")
+        while CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
+            //manager.requestWhenInUseAuthorization()
+        }
         let location: CLLocation? = getLocation()
         drunk.setValue(location, forKey: "location")
         let recordName = drunk.recordID.recordName
@@ -88,6 +101,7 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
                 }
             }
         }
+        getDrunks()
     }
     
     func getLocation() -> CLLocation? {

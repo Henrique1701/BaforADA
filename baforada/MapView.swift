@@ -17,16 +17,16 @@ struct MapView: View {
 struct Mapi: View{
     var cores:[Color] = [.red, .orange, .green]
     var index = 1
-    @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -8.0578, longitude: -34.8829), latitudinalMeters: 10000, longitudinalMeters: 10000)
-    @State var trancking: MapUserTrackingMode = .follow
-    @State var manager = CLLocationManager()
-    @StateObject var managerDelegate = locationDelegate()
+//    @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -8.0578, longitude: -34.8829), latitudinalMeters: 10000, longitudinalMeters: 10000)
+//    @State var trancking: MapUserTrackingMode = .follow
+//    @State var manager = CLLocationManager()
+//    @StateObject var managerDelegate = locationDelegate()
     @ObservedObject var drunkBank = DrunkBank()
     
     
     var body: some View{
         VStack{
-            Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: $trancking, annotationItems: managerDelegate.pins) { pin in
+            Map(coordinateRegion: $drunkBank.region, interactionModes: .all, showsUserLocation: true, userTrackingMode: $drunkBank.tracking, annotationItems: drunkBank.managerDelegate.pins) { pin in
                 MapAnnotation(coordinate: pin.location.coordinate) {
                     Image(pin.drunkness)
                         .resizable()
@@ -41,9 +41,7 @@ struct Mapi: View{
             
         }
         .onAppear {
-            manager.delegate = managerDelegate
-            drunkBank.getDrunks()
-            managerDelegate.addPins(drunkBank.drunks)
+           
         }
     }
 }

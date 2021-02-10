@@ -34,7 +34,8 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
         getDrunks()
     }
     
-    func getDrunks() {
+    func getDrunks(){
+        print("Iniciou getDrunks")
         var drunkRecords: [CKRecord] = []
         
         let predicate = NSPredicate(value: true)
@@ -47,15 +48,18 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
         
         operation.recordFetchedBlock = { record in
             DispatchQueue.main.async{
+                print("achou alguem")
                 drunkRecords.append(record)
             }
         }
         
         operation.queryCompletionBlock = { cursor, error in
             DispatchQueue.main.async {
+                print("terminou de achar")
                 for record in drunkRecords {
                     let drunk = Drunk(recordName: record.recordID.recordName, lastTest: record["lastTest"] as! Date, location: record["location"] as! CLLocation, drunkness: record["drunkness"] as! Int)
                     self.drunks.append(drunk)
+                    print(drunk.location)
                 }
             }
         }

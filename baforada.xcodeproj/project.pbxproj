@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57FBEFA525D45DF30026ACE4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FBEFA425D45DF30026ACE4 /* MapView.swift */; };
 		BE2742C725CB2531006699E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2742C625CB2531006699E6 /* AppDelegate.swift */; };
 		BE2742C925CB2531006699E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2742C825CB2531006699E6 /* SceneDelegate.swift */; };
 		BE2742CB25CB2531006699E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2742CA25CB2531006699E6 /* ContentView.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		57FBEFA425D45DF30026ACE4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		BE2742C325CB2531006699E6 /* baforada.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = baforada.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE2742C625CB2531006699E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE2742C825CB2531006699E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				BE2742C625CB2531006699E6 /* AppDelegate.swift */,
 				BE2742C825CB2531006699E6 /* SceneDelegate.swift */,
 				BE2742CA25CB2531006699E6 /* ContentView.swift */,
+				57FBEFA425D45DF30026ACE4 /* MapView.swift */,
 				BE2742CC25CB2540006699E6 /* Assets.xcassets */,
 				BE2742D125CB2540006699E6 /* LaunchScreen.storyboard */,
 				BE2742D425CB2540006699E6 /* Info.plist */,
@@ -190,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEB689F525CC77B500AABE21 /* DrunkBank.swift in Sources */,
+				57FBEFA525D45DF30026ACE4 /* MapView.swift in Sources */,
 				BE2742C725CB2531006699E6 /* AppDelegate.swift in Sources */,
 				BE2742C925CB2531006699E6 /* SceneDelegate.swift in Sources */,
 				BEB689F025CC75F300AABE21 /* Drunk.swift in Sources */,
@@ -335,7 +339,7 @@
 				CODE_SIGN_ENTITLEMENTS = baforada/baforada.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"baforada/Preview Content\"";
-				DEVELOPMENT_TEAM = 23WSBM7T82;
+				DEVELOPMENT_TEAM = VZ9BWS84AA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = baforada/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -357,7 +361,7 @@
 				CODE_SIGN_ENTITLEMENTS = baforada/baforada.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"baforada/Preview Content\"";
-				DEVELOPMENT_TEAM = 23WSBM7T82;
+				DEVELOPMENT_TEAM = VZ9BWS84AA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = baforada/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -9,16 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var bank = DrunkBank()
     
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Mapi()
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}

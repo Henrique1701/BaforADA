@@ -29,7 +29,7 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         
         if !(UserDefaults.standard.bool(forKey: "userCreated")) {
-            setDrunk()
+            setDrunk(drunkness: 0)
         }
         getDrunks()
     }
@@ -54,7 +54,7 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
         operation.queryCompletionBlock = { cursor, error in
             DispatchQueue.main.async {
                 for record in drunkRecords {
-                    let drunk = Drunk(recordName: record.recordID.recordName, lastTest: record["lastTest"] as! Date, location: record["location"] as! CLLocation)
+                    let drunk = Drunk(recordName: record.recordID.recordName, lastTest: record["lastTest"] as! Date, location: record["location"] as! CLLocation, drunkness: record["drunkness"] as! Int)
                     self.drunks.append(drunk)
                 }
             }
@@ -63,13 +63,16 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
         publicDatabase.add(operation)
     }
     
-    func setDrunk() {
+    func setDrunk(drunkness: Int) {
         UserDefaults.standard.set(true, forKey: "userCreated")
         
         let drunk = CKRecord(recordType: "Drunk")
+        drunk.setValue(drunkness, forKey: "drunkness")
         drunk.setValue(Date(), forKey: "lastTest")
         let location: CLLocation? = getLocation()
         drunk.setValue(location, forKey: "location")
+        let recordName = drunk.recordID.recordName
+        UserDefaults.standard.setValue(recordName, forKey: "recordName")
         
         self.publicDatabase.save(drunk) { (savedRecord, error) in
             DispatchQueue.main.async {

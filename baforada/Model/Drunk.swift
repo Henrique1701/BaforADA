@@ -14,10 +14,12 @@ class Drunk {
     var recordName: String
     var lastTest: Date
     var location: CLLocation
+    var drunkness: Int
     
-    init (recordName: String, lastTest: Date, location: CLLocation) {
+    init (recordName: String, lastTest: Date, location: CLLocation, drunkness: Int) {
         self.recordName = recordName
         self.lastTest = lastTest
         self.location = location
+        self.drunkness = drunkness
     }
 }

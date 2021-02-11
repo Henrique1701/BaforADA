@@ -34,9 +34,7 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
 //        locationManager.requestAlwaysAuthorization()
 //        locationManager.requestWhenInUseAuthorization()
         
-        if !(UserDefaults.standard.bool(forKey: "userCreated")) {
-            setDrunk(drunkness: 2)
-        }
+        
         manager.delegate = managerDelegate
         getDrunks()
         
@@ -45,7 +43,6 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
     func getDrunks(){
         print("Iniciou getDrunks")
         var drunkRecords: [CKRecord] = []
-        managerDelegate.pins = []
         
         let predicate = NSPredicate(value: true)
         
@@ -59,6 +56,7 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
             DispatchQueue.main.async{
                 print("achou alguem")
                 drunkRecords.append(record)
+                
             }
         }
         
@@ -71,10 +69,12 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
                     print(drunk.location)
                 }
                 self.managerDelegate.addPins(self.drunks)
+                self.objectWillChange.send()
             }
         }
         
         publicDatabase.add(operation)
+        
     }
     
     func setDrunk(drunkness: Int) {
@@ -97,13 +97,14 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
             DispatchQueue.main.async {
                 if error == nil {
                     print("Deu certo")
+                    self.getDrunks()
                 } else {
                     print("Deu errado")
                     print(error)
                 }
             }
         }
-        getDrunks()
+        
     }
     
     func getLocation() -> CLLocation? {

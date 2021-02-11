@@ -8,11 +8,6 @@
 import SwiftUI
 import MapKit
 
-struct MapView: View {
-    var body: some View {
-        Mapi()
-    }
-}
 
 struct Mapi: View{
     var cores:[Color] = [.red, .orange, .green]
@@ -21,12 +16,12 @@ struct Mapi: View{
 //    @State var trancking: MapUserTrackingMode = .follow
 //    @State var manager = CLLocationManager()
 //    @StateObject var managerDelegate = locationDelegate()
-    @ObservedObject var drunkBank = DrunkBank()
+    @ObservedObject var bank: DrunkBank
     
     
     var body: some View{
         VStack{
-            Map(coordinateRegion: $drunkBank.region, interactionModes: .all, showsUserLocation: true, userTrackingMode: $drunkBank.tracking, annotationItems: drunkBank.managerDelegate.pins) { pin in
+            Map(coordinateRegion: $bank.region, interactionModes: .all, showsUserLocation: true, userTrackingMode: $bank.tracking, annotationItems:bank.managerDelegate.pins) { pin in
                 MapAnnotation(coordinate: pin.location.coordinate) {
                     Image(pin.drunkness)
                         .resizable()
@@ -48,12 +43,17 @@ struct Mapi: View{
 
 class locationDelegate: NSObject, ObservableObject, CLLocationManagerDelegate{
     
-    @Published var pins: [Pin] = []
+    @Published var pins: [Pin] = []{
+        didSet{
+            self.objectWillChange.send()
+        }
+    }
     var drunkness:[String] = ["notDrunk", "halfDrunk", "fullDrunk"]
     var index = 1
     
     
     func addPins(_ drunks: [Drunk]){
+        pins = []
         for drunk in drunks{
             pins.append(Pin(location: drunk.location, drunkness: drunkness[drunk.drunkness]))
         }

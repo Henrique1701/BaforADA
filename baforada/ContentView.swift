@@ -8,10 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @ObservedObject var bank: DrunkBank
     
     var body: some View {
-        Mapi()
+        
+        TabView{
+            TestIntroView(sensorDevice: SensorDevice(bank: bank))
+                .tabItem {
+                    Image(systemName: "wind")
+                    Text("Baforar")
+                        .tag("0")
+                }
+            Mapi(bank: bank)
+                .tabItem {
+                    Image(systemName: "map")
+                    Text("Mapa")
+                        .tag("1")
+                }
+            
+        }
+        .accentColor(.beerYellow)
+        .background(Color.darkGray)
+        .environment(\.colorScheme, .dark)
+        .ignoresSafeArea()
+        
     }
 }
 

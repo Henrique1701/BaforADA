@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5715028925D59E860075EF9C /* Color+colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5715028825D59E860075EF9C /* Color+colors.swift */; };
+		5715028C25D59E910075EF9C /* TestIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5715028B25D59E910075EF9C /* TestIntroView.swift */; };
+		5715028F25D59E9C0075EF9C /* ActivityDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5715028E25D59E9C0075EF9C /* ActivityDescription.swift */; };
+		5715029225D59EA50075EF9C /* ShowResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5715029125D59EA50075EF9C /* ShowResultView.swift */; };
+		5715029525D59EAE0075EF9C /* SensorDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5715029425D59EAE0075EF9C /* SensorDevice.swift */; };
 		57FBEFA525D45DF30026ACE4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FBEFA425D45DF30026ACE4 /* MapView.swift */; };
 		BE2742C725CB2531006699E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2742C625CB2531006699E6 /* AppDelegate.swift */; };
 		BE2742C925CB2531006699E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2742C825CB2531006699E6 /* SceneDelegate.swift */; };
@@ -20,6 +25,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5715028825D59E860075EF9C /* Color+colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+colors.swift"; sourceTree = "<group>"; };
+		5715028B25D59E910075EF9C /* TestIntroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestIntroView.swift; sourceTree = "<group>"; };
+		5715028E25D59E9C0075EF9C /* ActivityDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDescription.swift; sourceTree = "<group>"; };
+		5715029125D59EA50075EF9C /* ShowResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowResultView.swift; sourceTree = "<group>"; };
+		5715029425D59EAE0075EF9C /* SensorDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDevice.swift; sourceTree = "<group>"; };
 		57FBEFA425D45DF30026ACE4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		BE2742C325CB2531006699E6 /* baforada.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = baforada.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE2742C625CB2531006699E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +85,10 @@
 				BE2742C825CB2531006699E6 /* SceneDelegate.swift */,
 				BE2742CA25CB2531006699E6 /* ContentView.swift */,
 				57FBEFA425D45DF30026ACE4 /* MapView.swift */,
+				5715028825D59E860075EF9C /* Color+colors.swift */,
+				5715028B25D59E910075EF9C /* TestIntroView.swift */,
+				5715028E25D59E9C0075EF9C /* ActivityDescription.swift */,
+				5715029125D59EA50075EF9C /* ShowResultView.swift */,
 				BE2742CC25CB2540006699E6 /* Assets.xcassets */,
 				BE2742D125CB2540006699E6 /* LaunchScreen.storyboard */,
 				BE2742D425CB2540006699E6 /* Info.plist */,
@@ -111,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				BEB689F425CC77B500AABE21 /* DrunkBank.swift */,
+				5715029425D59EAE0075EF9C /* SensorDevice.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -194,9 +209,14 @@
 			files = (
 				BEB689F525CC77B500AABE21 /* DrunkBank.swift in Sources */,
 				57FBEFA525D45DF30026ACE4 /* MapView.swift in Sources */,
+				5715028925D59E860075EF9C /* Color+colors.swift in Sources */,
 				BE2742C725CB2531006699E6 /* AppDelegate.swift in Sources */,
+				5715028F25D59E9C0075EF9C /* ActivityDescription.swift in Sources */,
 				BE2742C925CB2531006699E6 /* SceneDelegate.swift in Sources */,
+				5715029225D59EA50075EF9C /* ShowResultView.swift in Sources */,
+				5715028C25D59E910075EF9C /* TestIntroView.swift in Sources */,
 				BEB689F025CC75F300AABE21 /* Drunk.swift in Sources */,
+				5715029525D59EAE0075EF9C /* SensorDevice.swift in Sources */,
 				BE2742CB25CB2531006699E6 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

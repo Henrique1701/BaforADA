@@ -37,6 +37,7 @@ struct Mapi: View{
         }
         .onAppear {
             bank.getDrunks()
+            bank.changeLocation()
         }
     }
 }

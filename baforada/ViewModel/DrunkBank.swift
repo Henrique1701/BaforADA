@@ -40,6 +40,11 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
         
     }
     
+    func changeLocation(){
+        var locatione = getLocation()
+        region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: (locatione?.coordinate.latitude)!, longitude: (locatione?.coordinate.longitude)!), latitudinalMeters: 10000, longitudinalMeters: 10000)
+    }
+    
     func getDrunks(){
         print("Iniciou getDrunks")
         var drunkRecords: [CKRecord] = []

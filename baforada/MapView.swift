@@ -36,7 +36,7 @@ struct Mapi: View{
             
         }
         .onAppear {
-           
+            bank.getDrunks()
         }
     }
 }
@@ -72,7 +72,7 @@ class locationDelegate: NSObject, ObservableObject, CLLocationManagerDelegate{
 //    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("New Location")
+        //print("New Location")
 //        pins.append(Pin(location: locations.last!, drunkness: drunkness[index]))
 //        if index<2 {
 //            index += 1

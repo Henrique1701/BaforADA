@@ -136,6 +136,7 @@ class SensorDevice: ObservableObject {
               
             if !(UserDefaults.standard.bool(forKey: "userCreated")) {
                 self.bank.setDrunk(drunkness: drunkness.rawValue)
+                print("setando")
             }
             
             endedTest = true

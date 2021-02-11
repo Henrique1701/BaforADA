@@ -36,7 +36,7 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
         
         
         manager.delegate = managerDelegate
-        getDrunks()
+        //getDrunks()
         
     }
     
@@ -85,9 +85,6 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
         let drunk = CKRecord(recordType: "Drunk")
         drunk.setValue(drunkness, forKey: "drunkness")
         drunk.setValue(Date(), forKey: "lastTest")
-        while CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
-            print("aqui")
-        }
         let location: CLLocation? = getLocation()
         drunk.setValue(location, forKey: "location")
         let recordName = drunk.recordID.recordName

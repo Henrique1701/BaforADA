@@ -37,6 +37,7 @@ struct ActivityDescriptionView: View {
                         Text(description)
                             .foregroundColor(.gray)
                             .font(.system(size: 16, weight: .regular, design: .default))
+                            .opacity(sensorDevice.hasStarted ? 0 : 1)
                         
                         
                         
@@ -47,6 +48,7 @@ struct ActivityDescriptionView: View {
                 .padding(20)
                 
                 Text(sensorDevice.debugText)
+                    .opacity(0)
                 
                 Spacer()
                 Button(action:{
@@ -69,11 +71,13 @@ struct ActivityDescriptionView: View {
                 .frame(width: 10, height: 10)
                 .foregroundColor(.green)
                 .position(x: sensorDevice.centerX, y: sensorDevice.centerY)
+                .opacity(sensorDevice.hasStarted ? 1 : 0)
             
             Circle()
                 .frame(width: 10, height: 10)
                 .foregroundColor(.beerYellow)
                 .position(x: sensorDevice.drunkX, y: sensorDevice.drunkY)
+                .opacity(sensorDevice.hasStarted ? 1 : 0)
             
             NavigationLink(
                 destination: ShowResultView(drunkness: sensorDevice.drunkness, isActive: $sensorDevice.endedTest),

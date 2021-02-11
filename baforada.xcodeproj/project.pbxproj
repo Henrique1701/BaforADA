@@ -22,6 +22,7 @@
 		BE2742DF25CB2FC5006699E6 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2742DE25CB2FC5006699E6 /* CloudKit.framework */; };
 		BEB689F025CC75F300AABE21 /* Drunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB689EF25CC75F300AABE21 /* Drunk.swift */; };
 		BEB689F525CC77B500AABE21 /* DrunkBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB689F425CC77B500AABE21 /* DrunkBank.swift */; };
+		BEC8619F25D5AF80004A6874 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8619E25D5AF80004A6874 /* Onboarding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		BE2742DE25CB2FC5006699E6 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		BEB689EF25CC75F300AABE21 /* Drunk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drunk.swift; sourceTree = "<group>"; };
 		BEB689F425CC77B500AABE21 /* DrunkBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrunkBank.swift; sourceTree = "<group>"; };
+		BEC8619E25D5AF80004A6874 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		BEB689F325CC762600AABE21 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BEC8619E25D5AF80004A6874 /* Onboarding.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				BE2742C725CB2531006699E6 /* AppDelegate.swift in Sources */,
 				5715028F25D59E9C0075EF9C /* ActivityDescription.swift in Sources */,
 				BE2742C925CB2531006699E6 /* SceneDelegate.swift in Sources */,
+				BEC8619F25D5AF80004A6874 /* Onboarding.swift in Sources */,
 				5715029225D59EA50075EF9C /* ShowResultView.swift in Sources */,
 				5715028C25D59E910075EF9C /* TestIntroView.swift in Sources */,
 				BEB689F025CC75F300AABE21 /* Drunk.swift in Sources */,
@@ -359,7 +363,7 @@
 				CODE_SIGN_ENTITLEMENTS = baforada/baforada.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"baforada/Preview Content\"";
-				DEVELOPMENT_TEAM = VZ9BWS84AA;
+				DEVELOPMENT_TEAM = 23WSBM7T82;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = baforada/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -381,7 +385,7 @@
 				CODE_SIGN_ENTITLEMENTS = baforada/baforada.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"baforada/Preview Content\"";
-				DEVELOPMENT_TEAM = VZ9BWS84AA;
+				DEVELOPMENT_TEAM = 23WSBM7T82;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = baforada/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

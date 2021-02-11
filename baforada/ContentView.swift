@@ -19,12 +19,15 @@ struct ContentView: View {
                     Text("Baforar")
                         .tag("0")
                 }
+                .navigationBarHidden(true)
+            
             Mapi(bank: bank)
                 .tabItem {
                     Image(systemName: "map")
                     Text("Mapa")
                         .tag("1")
                 }
+                .navigationBarHidden(true)
             
         }
         .accentColor(.beerYellow)

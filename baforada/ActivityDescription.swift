@@ -80,7 +80,7 @@ struct ActivityDescriptionView: View {
                 .opacity(sensorDevice.hasStarted ? 1 : 0)
             
             NavigationLink(
-                destination: ShowResultView(drunkness: sensorDevice.drunkness, isActive: $sensorDevice.endedTest),
+                destination: DrunknessStateView(drunkness: sensorDevice.drunkness.rawValue),
                 isActive: $sensorDevice.endedTest){
                 EmptyView()
             }

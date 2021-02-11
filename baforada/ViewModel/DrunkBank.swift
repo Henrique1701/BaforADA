@@ -41,7 +41,7 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     func changeLocation(){
-        var locatione = getLocation()
+        let locatione = getLocation()
         region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: (locatione?.coordinate.latitude)!, longitude: (locatione?.coordinate.longitude)!), latitudinalMeters: 10000, longitudinalMeters: 10000)
     }
     
@@ -102,7 +102,6 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
                     self.getDrunks()
                 } else {
                     print("Deu errado")
-                    print(error)
                 }
             }
         }
@@ -125,7 +124,7 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
                                 self.getDrunks()
                             } else {
                                 print("Deu errado")
-                                print(error)
+                                print(error as Any)
                             }
                         }
                     }

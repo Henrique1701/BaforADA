@@ -20,6 +20,7 @@
 		BE2742D025CB2540006699E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE2742CF25CB2540006699E6 /* Preview Assets.xcassets */; };
 		BE2742D325CB2540006699E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE2742D125CB2540006699E6 /* LaunchScreen.storyboard */; };
 		BE2742DF25CB2FC5006699E6 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2742DE25CB2FC5006699E6 /* CloudKit.framework */; };
+		BE4F14D525D5D23900870076 /* DrunknessStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F14D425D5D23900870076 /* DrunknessStateView.swift */; };
 		BEB689F025CC75F300AABE21 /* Drunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB689EF25CC75F300AABE21 /* Drunk.swift */; };
 		BEB689F525CC77B500AABE21 /* DrunkBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB689F425CC77B500AABE21 /* DrunkBank.swift */; };
 		BEC8619F25D5AF80004A6874 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8619E25D5AF80004A6874 /* Onboarding.swift */; };
@@ -42,6 +43,7 @@
 		BE2742D425CB2540006699E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE2742DC25CB2FB4006699E6 /* baforada.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = baforada.entitlements; sourceTree = "<group>"; };
 		BE2742DE25CB2FC5006699E6 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		BE4F14D425D5D23900870076 /* DrunknessStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrunknessStateView.swift; sourceTree = "<group>"; };
 		BEB689EF25CC75F300AABE21 /* Drunk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drunk.swift; sourceTree = "<group>"; };
 		BEB689F425CC77B500AABE21 /* DrunkBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrunkBank.swift; sourceTree = "<group>"; };
 		BEC8619E25D5AF80004A6874 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				BEC8619E25D5AF80004A6874 /* Onboarding.swift */,
+				BE4F14D425D5D23900870076 /* DrunknessStateView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			files = (
 				BEB689F525CC77B500AABE21 /* DrunkBank.swift in Sources */,
 				57FBEFA525D45DF30026ACE4 /* MapView.swift in Sources */,
+				BE4F14D525D5D23900870076 /* DrunknessStateView.swift in Sources */,
 				5715028925D59E860075EF9C /* Color+colors.swift in Sources */,
 				BE2742C725CB2531006699E6 /* AppDelegate.swift in Sources */,
 				5715028F25D59E9C0075EF9C /* ActivityDescription.swift in Sources */,
@@ -362,7 +366,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = baforada/baforada.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"baforada/Preview Content\"";
 				DEVELOPMENT_TEAM = 23WSBM7T82;
 				ENABLE_PREVIEWS = YES;
@@ -385,7 +389,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = baforada/baforada.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"baforada/Preview Content\"";
 				DEVELOPMENT_TEAM = 23WSBM7T82;
 				ENABLE_PREVIEWS = YES;

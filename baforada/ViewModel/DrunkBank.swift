@@ -106,7 +106,34 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
                 }
             }
         }
-        
+    }
+    
+    func updateDrunk(id: String, drunkness: Int) {
+        publicDatabase.fetch(withRecordID: CKRecord.ID(recordName: id)){ record, error in
+            DispatchQueue.main.async {
+                if error == nil {
+                    let location: CLLocation? = self.getLocation()
+                    record!.setValue(drunkness, forKey: "drunkness")
+                    record!.setValue(Date(), forKey: "lastTest")
+                    record!.setValue(location, forKey: "location")
+                    self.publicDatabase.save(record!) {(savedRecord, error) in
+                        DispatchQueue.main.async {
+                            if error == nil {
+                                print("Deu certo, atualizou")
+                                self.managerDelegate.pins = []
+                                self.drunks = []
+                                self.getDrunks()
+                            } else {
+                                print("Deu errado")
+                                print(error)
+                            }
+                        }
+                    }
+                } else {
+                    print("Deu erro na busca")
+                }
+            }
+        }
     }
     
     func getLocation() -> CLLocation? {
@@ -125,48 +152,6 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
             return CLLocation(latitude: -8.0578, longitude: -34.8829)
         }
         
-    }
-//    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-//        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse{
-//            print("Authorized")
-//            manager.startUpdatingLocation()
-//            if !(UserDefaults.standard.bool(forKey: "userCreated")) {
-//                setDrunk(drunkness: 1)
-//            }
-//        }
-//        else{
-//            print("Not Authorized")
-//
-//            manager.requestWhenInUseAuthorization()
-//        }
-//
-//    }
-    
-    
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        print("entrou")
-    }
-//    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-//        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse{
-//            print("Authorized")
-//            manager.startUpdatingLocation()
-//        }
-//        else{
-//            print("Not Authorized")
-//            
-//            manager.requestWhenInUseAuthorization()
-//        }
-//    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("New Location")
-//        pins.append(Pin(location: locations.last!, drunkness: drunkness[index]))
-//        if index<2 {
-//            index += 1
-//        }
-//        else{
-//            index = 0
-//        }
     }
     
 }

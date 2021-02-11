@@ -137,6 +137,10 @@ class SensorDevice: ObservableObject {
             if !(UserDefaults.standard.bool(forKey: "userCreated")) {
                 self.bank.setDrunk(drunkness: drunkness.rawValue)
                 print("setando")
+            } else {
+                if let recordName = UserDefaults.standard.string(forKey: "recordName") {
+                    self.bank.updateDrunk(id: recordName, drunkness: drunkness.rawValue)
+                }
             }
             
             endedTest = true

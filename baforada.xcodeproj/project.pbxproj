@@ -362,6 +362,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = baforada/baforada.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"baforada/Preview Content\"";
 				DEVELOPMENT_TEAM = 23WSBM7T82;
 				ENABLE_PREVIEWS = YES;
@@ -384,6 +385,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = baforada/baforada.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"baforada/Preview Content\"";
 				DEVELOPMENT_TEAM = 23WSBM7T82;
 				ENABLE_PREVIEWS = YES;

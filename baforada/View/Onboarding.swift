@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct Onboarding: View {
+    
+    @ObservedObject var bank: DrunkBank
+    
     var body: some View {
         NavigationView {
             GeometryReader { geometry in
@@ -125,7 +128,7 @@ struct Onboarding: View {
                         Spacer()
                         
                         NavigationLink(
-                            destination: ContentView(bank: DrunkBank())) {
+                            destination: ContentView(bank: bank)) {
                             Text("Avançar")
                                 .foregroundColor(Color.black)
                                 .frame(width: geometry.size.width / 2, height: geometry.size.height / 15 )
@@ -142,6 +145,6 @@ struct Onboarding: View {
 
 struct Onboarding_Previews: PreviewProvider {
     static var previews: some View {
-        Onboarding()
+        Onboarding(bank: DrunkBank())
     }
 }

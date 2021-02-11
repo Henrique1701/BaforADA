@@ -363,7 +363,7 @@
 				CODE_SIGN_ENTITLEMENTS = baforada/baforada.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"baforada/Preview Content\"";
-				DEVELOPMENT_TEAM = 23WSBM7T82;
+				DEVELOPMENT_TEAM = P63952MS7L;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = baforada/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -385,7 +385,7 @@
 				CODE_SIGN_ENTITLEMENTS = baforada/baforada.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"baforada/Preview Content\"";
-				DEVELOPMENT_TEAM = 23WSBM7T82;
+				DEVELOPMENT_TEAM = P63952MS7L;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = baforada/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

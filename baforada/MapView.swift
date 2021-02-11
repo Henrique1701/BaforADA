@@ -59,17 +59,17 @@ class locationDelegate: NSObject, ObservableObject, CLLocationManagerDelegate{
         }
     }
     
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse{
-            print("Authorized")
-            manager.startUpdatingLocation()
-        }
-        else{
-            print("Not Authorized")
-            
-            manager.requestWhenInUseAuthorization()
-        }
-    }
+//    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+//        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse{
+//            print("Authorized")
+//            manager.startUpdatingLocation()
+//        }
+//        else{
+//            print("Not Authorized")
+//
+//            manager.requestWhenInUseAuthorization()
+//        }
+//    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("New Location")

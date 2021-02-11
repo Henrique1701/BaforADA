@@ -30,12 +30,12 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     override init() {
         super.init()
-        //manager.requestWhenInUseAuthorization()
+        manager.requestWhenInUseAuthorization()
 //        locationManager.requestAlwaysAuthorization()
 //        locationManager.requestWhenInUseAuthorization()
         
         if !(UserDefaults.standard.bool(forKey: "userCreated")) {
-            setDrunk(drunkness: 0)
+            setDrunk(drunkness: 2)
         }
         manager.delegate = managerDelegate
         getDrunks()
@@ -78,13 +78,15 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     func setDrunk(drunkness: Int) {
+        if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
+            return
+        }
         UserDefaults.standard.set(true, forKey: "userCreated")
-        manager.requestWhenInUseAuthorization()
         let drunk = CKRecord(recordType: "Drunk")
         drunk.setValue(drunkness, forKey: "drunkness")
         drunk.setValue(Date(), forKey: "lastTest")
         while CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
-            //manager.requestWhenInUseAuthorization()
+            print("aqui")
         }
         let location: CLLocation? = getLocation()
         drunk.setValue(location, forKey: "location")
@@ -121,4 +123,47 @@ class DrunkBank: NSObject, ObservableObject, CLLocationManagerDelegate {
         }
         
     }
+//    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+//        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse{
+//            print("Authorized")
+//            manager.startUpdatingLocation()
+//            if !(UserDefaults.standard.bool(forKey: "userCreated")) {
+//                setDrunk(drunkness: 1)
+//            }
+//        }
+//        else{
+//            print("Not Authorized")
+//
+//            manager.requestWhenInUseAuthorization()
+//        }
+//
+//    }
+    
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        print("entrou")
+    }
+//    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+//        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse{
+//            print("Authorized")
+//            manager.startUpdatingLocation()
+//        }
+//        else{
+//            print("Not Authorized")
+//            
+//            manager.requestWhenInUseAuthorization()
+//        }
+//    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("New Location")
+//        pins.append(Pin(location: locations.last!, drunkness: drunkness[index]))
+//        if index<2 {
+//            index += 1
+//        }
+//        else{
+//            index = 0
+//        }
+    }
+    
 }
